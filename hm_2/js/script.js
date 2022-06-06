@@ -41,4 +41,50 @@ console.log(upper());
 
 // 5
 
-const val = addOneForAll(1, 2, 3, 4);
+function addOneForAll (...num){  
+    let mas = [];
+    for(let i=0; i< num.length; i++){
+        mas[i] = num[i] + 1;
+    }
+    return mas;
+  }
+  console.log(addOneForAll(1, 2, 3));
+
+//   6
+
+function getSum (...num){  
+    let mas = 0;
+    for(let i=0; i < num.length; i++){
+        mas += num[i];
+    }
+    return mas;
+  }
+  console.log(getSum(1, 2, 3, 4));
+
+//   7
+
+const arr = [1, 'hello', 2, 3, 4, '5', '6', 7, null];
+let filteredArr = arr.filter(el => typeof el == 'number');
+console.log(filteredArr);
+
+// 8
+
+function arrayTesting(arr){  
+    let resul = arr.some(el => el == true);
+  if (resul == true){
+              return 'Нашли true значение'
+    }else{      
+     return 'Ничего нет'; 
+      } 
+  } 
+console.log(arrayTesting([0, false, null,0]));
+
+//Второй вариант, не понимаю почему не работает, все пункты получаються false, но ретерн все равно выполняеться внутри цикла фор
+
+function arrayTesting(arr){  
+    if(arr.filter(el => el == true)){
+          return 'Нашли true значение';
+    }
+  return 'Ничего нет';    
+  }
+console.log(arrayTesting([0, false, null,0,]));
