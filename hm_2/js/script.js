@@ -13,6 +13,9 @@ for(let i = 0 ; i < vegetable.length; i++){
 } 
 console.log(log);
 
+// Второй вариант
+const vegetable =  ['Капуста', 'Репа', 'Редиска', 'Морковка'];
+console.log(vegetable.join('|'));
 
 
 // 2 
@@ -39,6 +42,14 @@ function upper() {
 }
 console.log(upper());
 
+// Второй вариант 
+
+const arr = ['яблоко', 'ананас', 'груша'];
+    function mapHelper(element, index, arr) {
+        return element.toUpperCase();
+    }
+    console.log(arr.map(mapHelper));
+
 // 5
 
 function addOneForAll (...num){  
@@ -47,8 +58,8 @@ function addOneForAll (...num){
         mas[i] = num[i] + 1;
     }
     return mas;
-  }
-  console.log(addOneForAll(1, 2, 3));
+}
+console.log(addOneForAll(1, 2, 3));
 
 //   6
 
@@ -58,8 +69,8 @@ function getSum (...num){
         mas += num[i];
     }
     return mas;
-  }
-  console.log(getSum(1, 2, 3, 4));
+}
+console.log(getSum(1, 2, 3, 4));
 
 //   7
 
@@ -71,20 +82,22 @@ console.log(filteredArr);
 
 function arrayTesting(arr){  
     let resul = arr.some(el => el == true);
-  if (resul == true){
-              return 'Нашли true значение'
+    if (resul == true){
+        return 'Нашли true значение'
     }else{      
-     return 'Ничего нет'; 
-      } 
-  } 
+        return 'Ничего нет'; 
+    } 
+} 
+
 console.log(arrayTesting([0, false, null,0]));
 
 //Второй вариант, не понимаю почему не работает, все пункты получаються false, но ретерн все равно выполняеться внутри цикла фор
 
 function arrayTesting(arr){  
-    if(arr.filter(el => el == true)){
+    if(arr.filter(el => el == true).length !== 0){
           return 'Нашли true значение';
     }
   return 'Ничего нет';    
   }
 console.log(arrayTesting([0, false, null,0,]));
+
