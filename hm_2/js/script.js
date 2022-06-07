@@ -61,6 +61,16 @@ function addOneForAll (...num){
 }
 console.log(addOneForAll(1, 2, 3));
 
+// Второй вариант 
+function addOneForAll (...num){  
+    const newArray = num.map(function(item, i, arr){
+        return item + 1
+    });
+    return  newArray
+}
+console.log(addOneForAll(1, 2, 3));
+
+
 //   6
 
 function getSum (...num){  
@@ -91,13 +101,12 @@ function arrayTesting(arr){
 
 console.log(arrayTesting([0, false, null,0]));
 
-//Второй вариант, не понимаю почему не работает, все пункты получаються false, но ретерн все равно выполняеться внутри цикла фор
-
+//Второй вариант.
 function arrayTesting(arr){  
     if(arr.filter(el => el == true).length !== 0){
-          return 'Нашли true значение';
+        return 'Нашли true значение';
     }
-  return 'Ничего нет';    
-  }
+    return 'Ничего нет';    
+}
 console.log(arrayTesting([0, false, null,0,]));
 
