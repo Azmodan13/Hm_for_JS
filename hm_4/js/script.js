@@ -19,7 +19,7 @@ const returnedFunction = bigFunc(func,contecst,1,2,3)
 
 returnedFunction()
 
-// 2 , виыделил целый день на решение и все равно не понял как это сделать через this
+// 2 , выделил целый день на решение и все равно не понял как это сделать через this
 
 const obj = {
     a: 2,
