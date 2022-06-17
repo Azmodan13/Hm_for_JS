@@ -88,34 +88,16 @@ function getNewArray(arr){
 console.log(getNewArray(valObject0));
 // 4
 
-const citiesAndCountries = {
-	'Киев': 'Украина',
-	'Нью-Йорк': 'США',
-	'Амстердам': 'Нидерланды',
-	'Берлин': 'Германия',
-	'Париж': 'Франция',
-	'Лиссабон': 'Португалия',
-	'Вена': 'Австрия',
-};
 
 function getCity(object) {
     let result = []; 
     for (const [key, value] of Object.entries(object)) {
-    result += `${key} - это ${value};`;
+    result.push(`${key} - это ${value}`);
     }
-    result = result.split(';');
     return result
     }
 
 console.log(getCity(citiesAndCountries))
-
-// ========= второй способ который тоже не получился
-function getCity(obj) {
-    let result = '' ;
-    Object.entries(obj).forEach(([key, value])=>
-        result += `${key} - это ${value} `);
-        return result;
-}
 
 
 // 5
