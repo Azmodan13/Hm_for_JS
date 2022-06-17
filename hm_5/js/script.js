@@ -51,8 +51,7 @@ console.log(returReversKey);
 
 // 3
 
-let holder = document.createElement('div');
-holder.className = 'holder';
+
 let div = document.createElement('div');
 div.innerText = '1';
 div.className = 'item';
@@ -73,9 +72,8 @@ let div5 = document.createElement('div');
 div5.innerText = '5';
 div5.className = 'item';
 
+const holder = document.querySelector('.holder');
 holder.append(div, div2, div3, div4, div5);
-
-document.body.appendChild(holder);
 
 
 

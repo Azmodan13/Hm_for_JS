@@ -40,26 +40,23 @@ function sumOfKey() {
 console.log(sumOfKey())
 
 // =========================================
-const f  = Object.values(obj);
 
-function sumOfKey(someFunc, ctx){
+const obj4 = {a: 2, b: 4, c: 6, d: 8, e: 26, f : 'dsadsadas'};
 
-    return function(){
-        someFunc.apply(ctx)
-    }
+let arr = Object.keys(obj4)
+console.log(her)
+
+function getNewArray() {
+    for (const item of this) {  
+    const filtredValues = this[item].filter(function (number) { //* не понимаю почему  Cannot read properties of undefined (reading 'filter')
+        return number > 2 && number < 10 && typeof number == 'number' ? true : false;
+    });
 }
+    return filtredValues;
+};
+const result = getNewArray.call(arr);
+console.log(result);
 
-function func (){
-    let result = 0;
-    for(let i = 0; i < f.length; i++)
-    result += this[i];
-    console.log(result)
-}
-
-
-const returnedFunction = sumOfKey(func,f)
-
-console.log(returnedFunction())
 
 
 
@@ -87,7 +84,15 @@ function getNewArray(arr){
 }
 console.log(getNewArray(valObject0));
 // 4
-
+const citiesAndCountries = {
+	'Киев': 'Украина',
+	'Нью-Йорк': 'США',
+	'Амстердам': 'Нидерланды',
+	'Берлин': 'Германия',
+	'Париж': 'Франция',
+	'Лиссабон': 'Португалия',
+	'Вена': 'Австрия',
+};
 
 function getCity(object) {
     let result = []; 
@@ -108,7 +113,6 @@ const namesOfDays = {
 
 function getNameOfDay(lang, datNumber){
         let mass = namesOfDays[lang];
-        console.log(mass)
         if (datNumber > 31) {return 'Неверное значение'}
         else if (datNumber % 7 == 0 ){
             return mass [6]
@@ -135,7 +139,7 @@ function setProto(currentObj, protoObj){
 }
 console.log(setProto(person1,person))
 
-// 7  Не понимаю как вызвать в функции обьекта еще одну функцию, точнее как к ней обратиться 
+// 7 
 
 
 const person = {
@@ -144,7 +148,7 @@ const person = {
         this.name = sayName
     },
     getName : function() {
-        console.log(this.name)
+        return this.name;
     },
     
 
@@ -157,7 +161,7 @@ const person = {
         }  
     },   
     getAge : function() {
-        console.log(this.age)
+        return this.age;
     },
 }
 
@@ -168,6 +172,45 @@ person1.setName('Dimaaa')
 person1.getName()
 person1.setAge(7)
 person1.getAge()
-console.log(person)
 console.log(person1)
 
+// ======================
+// второй вариант
+
+const person = {
+    name: '',
+    age: 0,
+
+    setName: function (name) { 
+        this.name = name;
+    },
+
+    setAge: function (value) {
+        const ageAfterValidation = this.ageValidation(value);
+        this.age = ageAfterValidation;
+    },
+
+    getName : function() {
+        return this.name;
+    },
+    getAge : function() {
+        return this.age;
+    },
+
+    ageValidation: function (value) {
+        if (parseInt(value) >= 18) {
+            return value;
+        } else {
+            return 'Validation Error';
+        }
+    },
+};
+
+const person1 = Object.create(person);
+
+person1.setName('Dima');
+person1.setAge(22);
+console.log(person1)
+
+console.log(person1.getName());
+console.log(person1.getAge());
