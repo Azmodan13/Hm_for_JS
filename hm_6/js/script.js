@@ -7,12 +7,12 @@ document.body.append(p);
 let img = document.createElement('img');
 img.src = 'fine.jpeg';
 
-img.setAttribute('style','width:100px;position: absolute; transition:0.5s;');
+img.setAttribute('style','width:100px;position: absolute; z-index: 500; transition:0.5s;');
 
 p.onclick = () => {
     p.append(img);
     img.onmouseover = () => {
-        img.setAttribute('style','width:200px; position: absolute; transition:0.5s;');
+        img.style.width ='200px';
         img.onclick = () => {
             img.setAttribute('style','display:none;');
         }
@@ -129,12 +129,20 @@ start.onclick = () => {
 }
 };
 
-// 8
+// 8 //* Если есть способ проще это сделать,  я бы хотел посмотреть)
+
+let attrs = document.querySelector('.data').querySelectorAll('button');
 
 function logDataAttr() {
-    // let result = this.getAttribute('data-');
-    // alert(this.getAttribute('data-'))
-    alert(document.getElementsByTagName('button').innerHTML)
+for (var i = 0; i < attrs.length; i++) {
+    attrs[i].addEventListener('click', myFunc);
+    }
+};
 
-    
-}
+    function myFunc() {
+        let obj = this.attributes;
+        console.log(`У этого элемент ${obj.length -1} дата аттрибутов`);
+        for (var i = 1; i < obj.length; i++) {
+            console.log( 'Аттрибут ' + obj[i].name + ' - ' + obj[i].value);
+        }
+    };
