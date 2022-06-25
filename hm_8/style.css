@@ -1,0 +1,43 @@
+body{
+    box-sizing:border-box;
+    padding: 50px;
+}
+
+.game {
+    background: grey;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-sizing:border-box;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+.item {
+    background: #bcbcbc;
+    border: 1px solid #9a9a9a;
+    width: 32.6%;
+    height: 32.6%;
+    position: relative;
+}
+
+.player_1::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    content: 'X';
+    font-size: 100px;
+    /* line-height: 200px; */
+}
+.player_2::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    content: 'O';
+    font-size: 100px;
+    /* line-height: 200px; */
+}
