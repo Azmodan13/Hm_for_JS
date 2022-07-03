@@ -50,10 +50,8 @@
 let id = [];
 document.addEventListener('click', function(e) {
     if (!e.target.classList.contains('img')) { return }
-    console.log('click')
     id.push(e.target.dataset.id);
     const uniqArray = Array.from(new Set (id))
-    console.log(uniqArray);
     localStorage.setItem ("user", JSON.stringify(uniqArray));
 
 })
