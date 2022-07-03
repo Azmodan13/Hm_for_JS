@@ -47,25 +47,13 @@
     }
     
 
+let id = [];
+document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('img')) { return }
+    console.log('click')
+    id.push(e.target.dataset.id);
+    const uniqArray = Array.from(new Set (id))
+    console.log(uniqArray);
+    localStorage.setItem ("user", JSON.stringify(uniqArray));
 
-    let counter = 0;
-    document.addEventListener('click', function(e) {
-        if (!e.target.classList.contains('img')) { return }
-
-
-for (const i in localStorage){
-    console.log(typeof(i))
-    if(localStorage.getItem(i) === e.target.dataset.id){
-        return console.log('уже есть')
-    } else {
-        localStorage.setItem(counter,e.target.dataset.id )
-
-    }
-}
-counter++;
-});
-
-
-
-
-
+})
