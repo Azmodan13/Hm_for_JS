@@ -55,3 +55,6 @@ document.addEventListener('click', function(e) {
     localStorage.setItem ("user", JSON.stringify(uniqArray));
 
 })
+
+
+
