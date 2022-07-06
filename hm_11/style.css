@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
 * {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 body {
     background-color: #16171b;
 }
-.find {
+.form {
     margin: 0 auto;
     width: 300px;
-    height: 100px;
     background: #000;   
     display: flex;
     flex-direction: column;
@@ -26,22 +25,35 @@ body {
     border-radius: 10px;
     border: 1px solid rgb(161, 161, 161);
     font-size: 15px;
-
 }
-.btn {
+
+
+
+
+.btn, .clear, .remove, .profile {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
     height: 40px;
     background-color:#5151ff;
     color: #fff;
     border: none;
     border-radius:10px;
     font-size: 18px;
+    line-height: 38px;
+    margin-bottom: 10px;
+    
 }
 
 .wraper {
     margin: 0 auto;
     width: 300px;
-
+    display: flex;
+    flex-direction: column-reverse;
 }
+
 .item {
     padding: 20px;
     background: #000;   
@@ -51,7 +63,13 @@ body {
     flex-direction: column;
     align-items: center;
     border: 2px solid rgba(129, 129, 129, 0.438);
+    opacity: 0;
+    transition: all 0.5s ease 0s;
 }
+.visible {
+    opacity: 1;
+}
+
 
 .img {
     width: 200px ;
@@ -62,8 +80,14 @@ body {
 .login {
     color: #fff;
     margin-bottom: 20px;
+    font-size: 25px;
+}
+.login::first-letter{
+    text-transform: uppercase;
 }
 .descr {
     color: #fff;
+    margin-bottom: 10px;
+
 }
 
