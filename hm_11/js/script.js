@@ -1,15 +1,13 @@
-
-
-document.querySelector('.btn').addEventListener('click', function() {
+document.querySelector('.btn').addEventListener('click', function () {
     let user = document.querySelector('.input').value;
-    if (user.length <= 3){
+    if (user.length <= 3) {
         console.log('err')
-    }else {
+    } else {
         fetchAssyncTodos(user)
     }
 })
 
-document.querySelector('.clear').addEventListener('click', function() {
+document.querySelector('.clear').addEventListener('click', function () {
     let item = document.querySelectorAll('.item');
     item.forEach(element => {
         element.remove()
@@ -19,11 +17,11 @@ document.querySelector('.clear').addEventListener('click', function() {
 const url = "https://api.github.com/users";
 
 
-async function fetchAssyncTodos (id) {
+async function fetchAssyncTodos(id) {
     try {
         const response = await fetch(`${url}/${id}`)
         const data = await response.json()
-        if(response.ok === false){
+        if (response.ok === false) {
             return err
         }
 
@@ -34,12 +32,12 @@ async function fetchAssyncTodos (id) {
     }
 }
 
-function createElement(foto, userLog, description, link) {   
+function createElement(foto, userLog, description, link) {
     let wraper = document.querySelector('.wraper')
-    
+
     const item = document.createElement('div');
     item.className = 'item'
-    
+
 
     const img = document.createElement('img');
     img.className = 'img'
@@ -47,7 +45,7 @@ function createElement(foto, userLog, description, link) {
 
     const descr = document.createElement('div');
     descr.className = 'descr'
-    descr.innerHTML = `Repositories: ${description}`  
+    descr.innerHTML = `Repositories: ${description}`
 
     const login = document.createElement('div');
     login.className = 'login'
@@ -64,27 +62,31 @@ function createElement(foto, userLog, description, link) {
 
     remove.addEventListener('click', function () {
         item.classList.remove('visible')
-        setTimeout(() => {item.remove(); }, 1000);
+        setTimeout(() => {
+            item.remove();
+        }, 1000);
     })
 
-    setTimeout(() => {item.classList.add('visible')}, 300);
+    setTimeout(() => {
+        item.classList.add('visible')
+    }, 300);
 
 
     item.append(img, login, profile, descr, remove)
     wraper.append(item)
 }
 
-function createError(foto) {   
+function createError(foto) {
     let wraper = document.querySelector('.wraper')
-    
+
     const item = document.createElement('div');
     item.className = 'item'
-    
+
 
     const img = document.createElement('img');
     img.className = 'img'
     img.src = foto
- 
+
 
 
     const remove = document.createElement('button');
@@ -93,12 +95,16 @@ function createError(foto) {
 
     remove.addEventListener('click', function () {
         item.classList.remove('visible')
-        setTimeout(() => {item.remove(); }, 1000);
+        setTimeout(() => {
+            item.remove();
+        }, 1000);
     })
 
-    setTimeout(() => {item.classList.add('visible')}, 300);
+    setTimeout(() => {
+        item.classList.add('visible')
+    }, 300);
 
 
-    item.append(img,remove)
+    item.append(img, remove)
     wraper.append(item)
 }
