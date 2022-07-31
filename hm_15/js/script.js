@@ -1,7 +1,7 @@
 // 1
 
 class Human {
-    static getTtype() {
+    static getType() {
         return `I'm Humen`
     }
     constructor(name, age) {
@@ -17,25 +17,30 @@ class Human {
     }
 }
 
+
 class Tester extends Human {
     constructor(name, age) {
         super(name, age)
         this.job = 'Tester'
     }
     static getJob() {
+        this.job = 'Tester'
         return this.job
     }
 }
 
 class Programmer extends Human {
+    
     constructor(name, age) {
         super(name, age)
         this.job = 'Programmer'
     }
     static getJob() {
+        this.job = 'Programmer'
         return this.job
     }
 }
+
 
 class ITCompany {
     createWorker(name, age, position) {
@@ -48,12 +53,16 @@ class ITCompany {
     }
 }
 
+const dev =  Tester.getJob();
+console.log(dev)
 
 
 const user = new ITCompany()
 const programmer = user.createWorker('Dima', 27, 'Programmer')
 console.log(programmer)
 
+const user2 = new Programmer('Dima', 27)
+user2.getAge()
 
 // 2
 
